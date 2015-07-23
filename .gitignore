@@ -128,3 +128,6 @@ bower_components
 #MongoDB Data folder
 ####################
 data
+/TatuBus/nbproject/private/
+/BusCrawling/nbproject/private/
+/BusLibrary/nbproject/private/
