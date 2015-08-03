@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="css/google-map.css" rel="stylesheet"/>
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/main.css" rel="stylesheet"/>
+</head>
+<body style="background-color:lightgrey" onload="autocompleteAddress()">
+  <div class="header">
+    <table>
+      <tbody>
+        <tr>
+            <td>
+                Start: <input id="autocomplete1" placeholder="Enter your address" type="text" style="width:300px"></input>
+                End: <input id="autocomplete2" placeholder="Enter your address" type="text" style="width:300px"></input>
+                <button type="submit" name="btAction" value="Search" onclick="getAddressLocation()">Search</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <strong>THÔNG TIN XE BUÝT</strong>
+        <button type="submit" onclick="showmap()">Click</button>
+        <button type="submit" onclick="WriteFile()">getData</button>
+    </div>
+    <div class="col-md-9">
+        <div id="map-canvas"></div>
+    </div>
+</div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="javascript/google-map.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
+<script>
+
+
+function getPathFromServer() {
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            var data = xhr.responseText;
+            console.log(data);
+            console.log('OK');
+        }
+    };
+    alert('aa');
+    xmlhttp.open("GET", "ControllerServlet", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xmlhttp.send(null);
+}
+
+
+
+</script>
+
+</body>
+</html>
